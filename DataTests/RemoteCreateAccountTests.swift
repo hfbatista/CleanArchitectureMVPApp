@@ -7,24 +7,7 @@
 
 import XCTest
 import Domain
-
-class RamoteCreateAccount {
-	private let url: URL
-	private let httpClient: HttpPostClient
-	
-	init(url: URL, httpClient: HttpPostClient) {
-		self.url = url
-		self.httpClient = httpClient
-	}
-	
-	func create(_ createAccountModel: CreateAccountModel) {
-		self.httpClient.post(to: self.url, with: createAccountModel.toData())
-	}
-}
-
-protocol HttpPostClient {
-	func post(to url: URL, with data: Data?)
-}
+import Data
 
 class RemoteCreateAccountTests: XCTestCase {
 

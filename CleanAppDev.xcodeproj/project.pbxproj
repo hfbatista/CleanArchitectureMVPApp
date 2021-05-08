@@ -14,6 +14,8 @@
 		1DBD17EE26462ED7000B8FD2 /* Domain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DBD17C526462B01000B8FD2 /* Domain.framework */; };
 		1DBD17EF26462ED7000B8FD2 /* Domain.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1DBD17C526462B01000B8FD2 /* Domain.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		1DBD17F42646498B000B8FD2 /* BaseModel .swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DBD17F32646498B000B8FD2 /* BaseModel .swift */; };
+		1DBD17F626464B6C000B8FD2 /* RamoteCreateAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DBD17F526464B6C000B8FD2 /* RamoteCreateAccount.swift */; };
+		1DBD17F826464BBD000B8FD2 /* HttpPostClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DBD17F726464BBD000B8FD2 /* HttpPostClient.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +60,8 @@
 		1DBD17E326462E65000B8FD2 /* RemoteCreateAccountTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteCreateAccountTests.swift; sourceTree = "<group>"; };
 		1DBD17E526462E65000B8FD2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1DBD17F32646498B000B8FD2 /* BaseModel .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BaseModel .swift"; sourceTree = "<group>"; };
+		1DBD17F526464B6C000B8FD2 /* RamoteCreateAccount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RamoteCreateAccount.swift; sourceTree = "<group>"; };
+		1DBD17F726464BBD000B8FD2 /* HttpPostClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpPostClient.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,6 +127,8 @@
 			isa = PBXGroup;
 			children = (
 				1DBD17D926462E65000B8FD2 /* Info.plist */,
+				1DBD17F526464B6C000B8FD2 /* RamoteCreateAccount.swift */,
+				1DBD17F726464BBD000B8FD2 /* HttpPostClient.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -234,6 +240,7 @@
 					};
 					1DBD17D526462E65000B8FD2 = {
 						CreatedOnToolsVersion = 12.5;
+						LastSwiftMigration = 1250;
 					};
 					1DBD17DD26462E65000B8FD2 = {
 						CreatedOnToolsVersion = 12.5;
@@ -299,6 +306,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1DBD17F826464BBD000B8FD2 /* HttpPostClient.swift in Sources */,
+				1DBD17F626464B6C000B8FD2 /* RamoteCreateAccount.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -506,6 +515,7 @@
 		1DBD17E826462E65000B8FD2 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEFINES_MODULE = YES;
@@ -525,6 +535,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
@@ -532,6 +543,7 @@
 		1DBD17E926462E65000B8FD2 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEFINES_MODULE = YES;
@@ -558,6 +570,7 @@
 		1DBD17EB26462E65000B8FD2 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 26D65H4NM7;
@@ -578,6 +591,7 @@
 		1DBD17EC26462E65000B8FD2 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 26D65H4NM7;
