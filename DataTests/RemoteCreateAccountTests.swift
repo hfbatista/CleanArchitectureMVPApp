@@ -6,6 +6,7 @@
 //
 
 import XCTest
+import Domain
 
 class RamoteCreateAccount {
 	private let url: URL
@@ -16,13 +17,14 @@ class RamoteCreateAccount {
 		self.httpClient = httpClient
 	}
 	
-	func create() {
-		self.httpClient.post(url: self.url)
+	func create(createAccountModel: CreateAccountModel) {
+		let data = try? JSONEncoder().encode(createAccountModel)
+		self.httpClient.post(to: self.url, with: data )
 	}
 }
 
 protocol HttpPostClient {
-	func post(url: URL)
+	func post(to url: URL, with data: Data?)
 }
 
 class RemoteCreateAccountTests: XCTestCase {
@@ -31,19 +33,32 @@ class RemoteCreateAccountTests: XCTestCase {
 		let url = URL(string: "https://any-url")!
 		let httpClientSpy = HttpClientSpy()
 		let sut = RamoteCreateAccount(url: url, httpClient: httpClientSpy)
+		let createAccountModel = CreateAccountModel(name: "nome", email: "a@b.c", password: "123", passwordConfirmation: "123")
 		
-		sut.create()
+		sut.create(createAccountModel: createAccountModel)
 		XCTAssertEqual(httpClientSpy.url, url)
-		
     }
+	
+	func test_should_call_httpClient_with_correct_data() throws {
+		let httpClientSpy = HttpClientSpy()
+		let sut = RamoteCreateAccount(url: URL(string: "https://any-url")!, httpClient: httpClientSpy)
+		let createAccountModel = CreateAccountModel(name: "nome", email: "a@b.c", password: "123", passwordConfirmation: "123")
+		
+		sut.create(createAccountModel: createAccountModel)
+		let data = try? JSONEncoder().encode(createAccountModel)
+		
+		XCTAssertEqual(httpClientSpy.data, data)
+	}
 }
 
 extension RemoteCreateAccountTests {
 	class HttpClientSpy: HttpPostClient {
-		var url: URL?
+		var url		: URL?
+		var data	: Data?
 		
-		func post(url: URL) {
+		func post(to url: URL, with data: Data?) {
 			self.url = url
+			self.data = data
 		}
 	}
 }
