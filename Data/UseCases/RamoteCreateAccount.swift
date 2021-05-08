@@ -19,8 +19,15 @@ public final class RamoteCreateAccount: CreateAccount {
 	
 	public func create(_ createAccountModel: CreateAccountModel, completion: @escaping (Result<AccountModel, DomainError>) -> Void) {
 		self.httpClient.post(to: self.url, with: createAccountModel.toData()) { result in
-			completion(.failure(.unexpected))
+			switch result {
+				case .success (let data):
+					if let model: AccountModel = data.toModel() {
+						completion(.success(model))
+					} else {
+						completion(.failure(.invalidData))
+					}
+				case .failure: completion(.failure(.unexpected))
+			}
 		}
 	}
 }
-

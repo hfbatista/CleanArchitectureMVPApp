@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1DB76C0E2646E027005006C1 /* ExtensionHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DB76C0D2646E027005006C1 /* ExtensionHelpers.swift */; };
 		1DBD17CE26462C34000B8FD2 /* CreateAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DBD17CD26462C34000B8FD2 /* CreateAccount.swift */; };
 		1DBD17D026462E0E000B8FD2 /* AccountModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DBD17CF26462E0E000B8FD2 /* AccountModel.swift */; };
 		1DBD17DF26462E65000B8FD2 /* Data.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DBD17D626462E65000B8FD2 /* Data.framework */; };
@@ -52,6 +53,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		1DB76C0D2646E027005006C1 /* ExtensionHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionHelpers.swift; sourceTree = "<group>"; };
 		1DBD17C526462B01000B8FD2 /* Domain.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Domain.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DBD17C826462B01000B8FD2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1DBD17CD26462C34000B8FD2 /* CreateAccount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccount.swift; sourceTree = "<group>"; };
@@ -95,6 +97,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1DB76C0B2646E000005006C1 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				1DB76C0C2646E00B005006C1 /* ExtensionHelpers */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		1DB76C0C2646E00B005006C1 /* ExtensionHelpers */ = {
+			isa = PBXGroup;
+			children = (
+				1DB76C0D2646E027005006C1 /* ExtensionHelpers.swift */,
+			);
+			path = ExtensionHelpers;
+			sourceTree = "<group>";
+		};
 		1DBD17AB26462A9E000B8FD2 = {
 			isa = PBXGroup;
 			children = (
@@ -130,6 +148,7 @@
 		1DBD17D726462E65000B8FD2 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				1DB76C0B2646E000005006C1 /* Helpers */,
 				1DBD17FD26464E6D000B8FD2 /* UseCases */,
 				1DBD17FE26464E77000B8FD2 /* Http */,
 				1DBD17D926462E65000B8FD2 /* Info.plist */,
@@ -370,6 +389,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1DBD17F826464BBD000B8FD2 /* HttpPostClient.swift in Sources */,
+				1DB76C0E2646E027005006C1 /* ExtensionHelpers.swift in Sources */,
 				1DBD180426465884000B8FD2 /* HttpError.swift in Sources */,
 				1DBD17F626464B6C000B8FD2 /* RamoteCreateAccount.swift in Sources */,
 			);
