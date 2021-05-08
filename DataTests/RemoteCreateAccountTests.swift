@@ -36,7 +36,9 @@ class RemoteCreateAccountTests: XCTestCase {
 		XCTAssertEqual(httpClientSpy.url, url)
 		
     }
-	
+}
+
+extension RemoteCreateAccountTests {
 	class HttpClientSpy: HttpPostClient {
 		var url: URL?
 		
@@ -44,5 +46,4 @@ class RemoteCreateAccountTests: XCTestCase {
 			self.url = url
 		}
 	}
-
 }
