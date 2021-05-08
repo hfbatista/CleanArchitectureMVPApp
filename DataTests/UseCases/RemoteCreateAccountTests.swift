@@ -29,65 +29,59 @@ class RemoteCreateAccountTests: XCTestCase {
 	
 	func test_should_complete_with_error_if_client_completes_with_error() throws {
 		let (sut, httpClientSpy) = self.makeSut()
-		let exp = expectation(description: "waiting...")
-		let expectedAccount = makeAccountModel()
-		
-		sut.create(self.makeCreateAccountModel()) { result in
-			switch result {
-				case .failure: XCTFail("Expected an success and reveived \(result) instead")
-				case .success (let receivedAccount): XCTAssertEqual(receivedAccount, expectedAccount)
-			}
-			exp.fulfill()
+		expect(sut, completeWith: .failure(.unexpected)) {
+			httpClientSpy.completionWithError(error: .noConnectivity)
 		}
-		httpClientSpy.completionWithData(expectedAccount.toData()!)
-		wait(for: [exp], timeout: 1)
 	}
 	
-	func test_should_complete_with_account_if_client_valid_data() throws {
+	func test_should_complete_with_account_if_client_completes_with_valid_data() throws {
 		let (sut, httpClientSpy) = self.makeSut()
-		let exp = expectation(description: "waiting...")
-		
-		sut.create(self.makeCreateAccountModel()) { result in
-			switch result {
-				case .failure(let error):(XCTAssertEqual(error, .unexpected))
-				case .success: XCTFail("Expected an error and reveived \(result) instead")
-			}
-			exp.fulfill()
+		let expectedAcount = makeAccountModel()
+		expect(sut, completeWith: .success(expectedAcount)) {
+			httpClientSpy.completionWithData(expectedAcount.toData()!)
 		}
-		httpClientSpy.completionWithError(error: .noConnectivity)
-		wait(for: [exp], timeout: 1)
 	}
 	
 	func test_should_complete_with_error_if_client_completes_with_invalid_data() throws {
 		let (sut, httpClientSpy) = self.makeSut()
-		let exp = expectation(description: "waiting...")
-		
-		sut.create(self.makeCreateAccountModel()) { result in
-			switch result {
-				case .failure(let error):(XCTAssertEqual(error, .invalidData))
-				case .success: XCTFail("Expected an success and reveived \(result) instead")
-			}
-			exp.fulfill()
+		expect(sut, completeWith: .failure(.invalidData)) {
+			httpClientSpy.completionWithData(Data("invalid_data".utf8))
 		}
-		httpClientSpy.completionWithData(Data("invalid_data".utf8))
-		wait(for: [exp], timeout: 1)
 	}
 	
 }
 
 extension RemoteCreateAccountTests {
+	func makeSut(with url: URL = URL(string: "https://any-url")!) -> (sut: RamoteCreateAccount, httpClientSpy: HttpClientSpy) {
+		let httpClientSpy = HttpClientSpy()
+		let sut = RamoteCreateAccount(url: url, httpClient: httpClientSpy)
+		return (sut, httpClientSpy)
+	}
+	
+	func expect(_ sut: RamoteCreateAccount, completeWith expectedResult: Result<AccountModel, DomainError>, when action: () -> Void) {
+		let exp = expectation(description: "waiting...")
+		sut.create(self.makeCreateAccountModel()) { receivedResult in
+			switch ( expectedResult, receivedResult ) {
+				case (.failure(let expectedError), .failure(let receivedError)):
+					(XCTAssertEqual(expectedError, receivedError))
+					
+				case (.success(let expectedAccount), .success(let receivedAccount)):
+					XCTAssertEqual(expectedAccount, receivedAccount)
+					
+				default:
+					XCTFail("Expected \(expectedResult) and reveived \(receivedResult) instead")
+			}
+			exp.fulfill()
+		}
+		action()
+		wait(for: [exp], timeout: 1)
+	}
 	func makeCreateAccountModel() -> CreateAccountModel {
 		return CreateAccountModel(name: "nome", email: "a@b.c", password: "123", passwordConfirmation: "123")
 	}
 	
 	func makeAccountModel() -> AccountModel {
 		return AccountModel(id: "1", name: "nome", email: "a@b.c", password: "123")
-	}
-	
-	func makeSut(with url: URL = URL(string: "https://any-url")!) -> (sut: RamoteCreateAccount, httpClientSpy: HttpClientSpy) {
-		let httpClientSpy = HttpClientSpy()
-		let sut = RamoteCreateAccount(url: url, httpClient: httpClientSpy)
-		return (sut, httpClientSpy)
 	}
 	
 	class HttpClientSpy: HttpPostClient {
