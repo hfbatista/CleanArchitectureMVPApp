@@ -115,9 +115,8 @@
 		1DBD17C626462B01000B8FD2 /* Domain */ = {
 			isa = PBXGroup;
 			children = (
-				1DBD17CD26462C34000B8FD2 /* CreateAccount.swift */,
-				1DBD17CF26462E0E000B8FD2 /* AccountModel.swift */,
-				1DBD17F32646498B000B8FD2 /* BaseModel .swift */,
+				1DBD17FC26464E47000B8FD2 /* UseCases */,
+				1DBD17F926464DA8000B8FD2 /* Models */,
 				1DBD17C826462B01000B8FD2 /* Info.plist */,
 			);
 			path = Domain;
@@ -126,9 +125,9 @@
 		1DBD17D726462E65000B8FD2 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				1DBD17FD26464E6D000B8FD2 /* UseCases */,
+				1DBD17FE26464E77000B8FD2 /* Http */,
 				1DBD17D926462E65000B8FD2 /* Info.plist */,
-				1DBD17F526464B6C000B8FD2 /* RamoteCreateAccount.swift */,
-				1DBD17F726464BBD000B8FD2 /* HttpPostClient.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -136,7 +135,7 @@
 		1DBD17E226462E65000B8FD2 /* DataTests */ = {
 			isa = PBXGroup;
 			children = (
-				1DBD17E326462E65000B8FD2 /* RemoteCreateAccountTests.swift */,
+				1DBD17FB26464E3D000B8FD2 /* UseCases */,
 				1DBD17E526462E65000B8FD2 /* Info.plist */,
 			);
 			path = DataTests;
@@ -147,6 +146,47 @@
 			children = (
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		1DBD17F926464DA8000B8FD2 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				1DBD17CF26462E0E000B8FD2 /* AccountModel.swift */,
+				1DBD17F32646498B000B8FD2 /* BaseModel .swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		1DBD17FB26464E3D000B8FD2 /* UseCases */ = {
+			isa = PBXGroup;
+			children = (
+				1DBD17E326462E65000B8FD2 /* RemoteCreateAccountTests.swift */,
+			);
+			path = UseCases;
+			sourceTree = "<group>";
+		};
+		1DBD17FC26464E47000B8FD2 /* UseCases */ = {
+			isa = PBXGroup;
+			children = (
+				1DBD17CD26462C34000B8FD2 /* CreateAccount.swift */,
+			);
+			path = UseCases;
+			sourceTree = "<group>";
+		};
+		1DBD17FD26464E6D000B8FD2 /* UseCases */ = {
+			isa = PBXGroup;
+			children = (
+				1DBD17F526464B6C000B8FD2 /* RamoteCreateAccount.swift */,
+			);
+			path = UseCases;
+			sourceTree = "<group>";
+		};
+		1DBD17FE26464E77000B8FD2 /* Http */ = {
+			isa = PBXGroup;
+			children = (
+				1DBD17F726464BBD000B8FD2 /* HttpPostClient.swift */,
+			);
+			path = Http;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
