@@ -11,7 +11,7 @@ public protocol CreateAccount {
 	func create(createAccountModel: CreateAccountModel, completion: @escaping (Result<AccountModel, Error>) ->  Void)
 }
 
-public struct CreateAccountModel: Encodable {
+public struct CreateAccountModel: BaseModel {
 	public var name					: String
 	public var email				: String
 	public var password				: String

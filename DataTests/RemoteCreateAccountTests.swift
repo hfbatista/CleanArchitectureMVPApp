@@ -18,8 +18,7 @@ class RamoteCreateAccount {
 	}
 	
 	func create(_ createAccountModel: CreateAccountModel) {
-		let data = try? JSONEncoder().encode(createAccountModel)
-		self.httpClient.post(to: self.url, with: data )
+		self.httpClient.post(to: self.url, with: createAccountModel.toData())
 	}
 }
 
@@ -42,9 +41,7 @@ class RemoteCreateAccountTests: XCTestCase {
 		let createAccountModel = self.makeCreateAccountModel()
 		
 		sut.create(createAccountModel)
-		let data = try? JSONEncoder().encode(createAccountModel)
-		
-		XCTAssertEqual(httpClientSpy.data, data)
+		XCTAssertEqual(httpClientSpy.data, createAccountModel.toData())
 	}
 }
 
