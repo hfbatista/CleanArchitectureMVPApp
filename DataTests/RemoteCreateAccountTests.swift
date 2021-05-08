@@ -30,17 +30,15 @@ protocol HttpPostClient {
 class RemoteCreateAccountTests: XCTestCase {
 
     func test_should_call_httpClient_with_correct_url() throws {
-		let url = URL(string: "https://any-url")!
-		let httpClientSpy = HttpClientSpy()
-		let sut = RamoteCreateAccount(url: url, httpClient: httpClientSpy)
+		let testURL = URL(string: "https://any-url")!
+		let (sut, httpClientSpy) = self.makeSut(with: testURL)
 		
 		sut.create(self.makeCreateAccountModel())
-		XCTAssertEqual(httpClientSpy.url, url)
+		XCTAssertEqual(httpClientSpy.url, testURL)
     }
 	
 	func test_should_call_httpClient_with_correct_data() throws {
-		let httpClientSpy = HttpClientSpy()
-		let sut = RamoteCreateAccount(url: URL(string: "https://any-url")!, httpClient: httpClientSpy)
+		let (sut, httpClientSpy) = self.makeSut()
 		let createAccountModel = self.makeCreateAccountModel()
 		
 		sut.create(createAccountModel)
@@ -53,6 +51,12 @@ class RemoteCreateAccountTests: XCTestCase {
 extension RemoteCreateAccountTests {
 	func makeCreateAccountModel() -> CreateAccountModel {
 		return CreateAccountModel(name: "nome", email: "a@b.c", password: "123", passwordConfirmation: "123")
+	}
+	
+	func makeSut(with url: URL = URL(string: "https://any-url")!) -> (sut: RamoteCreateAccount, httpClientSpy: HttpClientSpy) {
+		let httpClientSpy = HttpClientSpy()
+		let sut = RamoteCreateAccount(url: url, httpClient: httpClientSpy)
+		return (sut, httpClientSpy)
 	}
 	
 	class HttpClientSpy: HttpPostClient {
