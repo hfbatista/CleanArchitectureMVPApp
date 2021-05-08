@@ -27,7 +27,7 @@ protocol HttpPostClient {
 
 class RemoteCreateAccountTests: XCTestCase {
 
-    func testExample() throws {
+    func test_should_call_httpClient_with_correct_url() throws {
 		let url = URL(string: "https://any-url")!
 		let httpClientSpy = HttpClientSpy()
 		let sut = RamoteCreateAccount(url: url, httpClient: httpClientSpy)
