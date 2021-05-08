@@ -8,7 +8,7 @@
 import Foundation
 import Domain
 
-public final class RamoteCreateAccount {
+public final class RamoteCreateAccount: CreateAccount {
 	private let url: URL
 	private let httpClient: HttpPostClient
 	
@@ -17,8 +17,10 @@ public final class RamoteCreateAccount {
 		self.httpClient = httpClient
 	}
 	
-	public func create(_ createAccountModel: CreateAccountModel) {
-		self.httpClient.post(to: self.url, with: createAccountModel.toData())
+	public func create(_ createAccountModel: CreateAccountModel, completion: @escaping (Result<AccountModel, DomainError>) -> Void) {
+		self.httpClient.post(to: self.url, with: createAccountModel.toData()) { result in
+			completion(.failure(.unexpected))
+		}
 	}
 }
 

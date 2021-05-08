@@ -16,6 +16,8 @@
 		1DBD17F42646498B000B8FD2 /* BaseModel .swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DBD17F32646498B000B8FD2 /* BaseModel .swift */; };
 		1DBD17F626464B6C000B8FD2 /* RamoteCreateAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DBD17F526464B6C000B8FD2 /* RamoteCreateAccount.swift */; };
 		1DBD17F826464BBD000B8FD2 /* HttpPostClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DBD17F726464BBD000B8FD2 /* HttpPostClient.swift */; };
+		1DBD1801264654EE000B8FD2 /* DomainError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DBD1800264654EE000B8FD2 /* DomainError.swift */; };
+		1DBD180426465884000B8FD2 /* HttpError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DBD180326465884000B8FD2 /* HttpError.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +64,8 @@
 		1DBD17F32646498B000B8FD2 /* BaseModel .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BaseModel .swift"; sourceTree = "<group>"; };
 		1DBD17F526464B6C000B8FD2 /* RamoteCreateAccount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RamoteCreateAccount.swift; sourceTree = "<group>"; };
 		1DBD17F726464BBD000B8FD2 /* HttpPostClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpPostClient.swift; sourceTree = "<group>"; };
+		1DBD1800264654EE000B8FD2 /* DomainError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DomainError.swift; sourceTree = "<group>"; };
+		1DBD180326465884000B8FD2 /* HttpError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpError.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +119,7 @@
 		1DBD17C626462B01000B8FD2 /* Domain */ = {
 			isa = PBXGroup;
 			children = (
+				1DBD17FF264654DC000B8FD2 /* Errors */,
 				1DBD17FC26464E47000B8FD2 /* UseCases */,
 				1DBD17F926464DA8000B8FD2 /* Models */,
 				1DBD17C826462B01000B8FD2 /* Info.plist */,
@@ -184,9 +189,26 @@
 		1DBD17FE26464E77000B8FD2 /* Http */ = {
 			isa = PBXGroup;
 			children = (
+				1DBD1802264655ED000B8FD2 /* Errors */,
 				1DBD17F726464BBD000B8FD2 /* HttpPostClient.swift */,
 			);
 			path = Http;
+			sourceTree = "<group>";
+		};
+		1DBD17FF264654DC000B8FD2 /* Errors */ = {
+			isa = PBXGroup;
+			children = (
+				1DBD1800264654EE000B8FD2 /* DomainError.swift */,
+			);
+			path = Errors;
+			sourceTree = "<group>";
+		};
+		1DBD1802264655ED000B8FD2 /* Errors */ = {
+			isa = PBXGroup;
+			children = (
+				1DBD180326465884000B8FD2 /* HttpError.swift */,
+			);
+			path = Errors;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -338,6 +360,7 @@
 			files = (
 				1DBD17F42646498B000B8FD2 /* BaseModel .swift in Sources */,
 				1DBD17CE26462C34000B8FD2 /* CreateAccount.swift in Sources */,
+				1DBD1801264654EE000B8FD2 /* DomainError.swift in Sources */,
 				1DBD17D026462E0E000B8FD2 /* AccountModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -347,6 +370,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1DBD17F826464BBD000B8FD2 /* HttpPostClient.swift in Sources */,
+				1DBD180426465884000B8FD2 /* HttpError.swift in Sources */,
 				1DBD17F626464B6C000B8FD2 /* RamoteCreateAccount.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
