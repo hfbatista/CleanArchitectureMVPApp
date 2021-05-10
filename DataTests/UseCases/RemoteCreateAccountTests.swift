@@ -49,27 +49,46 @@ class RemoteCreateAccountTests: XCTestCase {
 		}
 	}
 	
+	func test_should_not_complete_if_sut_has_been_deallocated() throws {
+		let httpClientSpy = HttpClientSpy()
+		var stu: RamoteCreateAccount? = RamoteCreateAccount(url: makeURL(), httpClient: httpClientSpy)
+		var result: Result<AccountModel, DomainError>?
+		
+		stu?.create(makeCreateAccountModel()){ result = $0 }
+		stu = nil
+		httpClientSpy.completionWithError(error: .noConnectivity)
+		XCTAssertNil(result)
+	}
+	
 }
 
 extension RemoteCreateAccountTests {
-	func makeSut(with url: URL = URL(string: "https://any-url")!) -> (sut: RamoteCreateAccount, httpClientSpy: HttpClientSpy) {
+	func makeSut(with url: URL = URL(string: "https://any-url")!, file: StaticString = #filePath, line: UInt = #line) -> (sut: RamoteCreateAccount, httpClientSpy: HttpClientSpy) {
 		let httpClientSpy = HttpClientSpy()
 		let sut = RamoteCreateAccount(url: url, httpClient: httpClientSpy)
+		self.checkMemoryLeak(for: sut, file: file, line: line)
+		self.checkMemoryLeak(for: httpClientSpy, file: file, line: line)
 		return (sut, httpClientSpy)
 	}
 	
-	func expect(_ sut: RamoteCreateAccount, completeWith expectedResult: Result<AccountModel, DomainError>, when action: () -> Void) {
+	func checkMemoryLeak(for instance: AnyObject, file: StaticString = #filePath, line: UInt = #line) {
+		addTeardownBlock { [weak instance] in
+			XCTAssertNil(instance, file: file, line: line)
+		}
+	}
+	
+	func expect(_ sut: RamoteCreateAccount, completeWith expectedResult: Result<AccountModel, DomainError>, when action: () -> Void, file: StaticString = #filePath, line: UInt = #line) {
 		let exp = expectation(description: "waiting...")
 		sut.create(self.makeCreateAccountModel()) { receivedResult in
 			switch ( expectedResult, receivedResult ) {
 				case (.failure(let expectedError), .failure(let receivedError)):
-					(XCTAssertEqual(expectedError, receivedError))
+					(XCTAssertEqual(expectedError, receivedError, file: file, line: line))
 					
 				case (.success(let expectedAccount), .success(let receivedAccount)):
-					XCTAssertEqual(expectedAccount, receivedAccount)
+					XCTAssertEqual(expectedAccount, receivedAccount, file: file, line: line)
 					
 				default:
-					XCTFail("Expected \(expectedResult) and reveived \(receivedResult) instead")
+					XCTFail("Expected \(expectedResult) and reveived \(receivedResult) instead", file: file, line: line)
 			}
 			exp.fulfill()
 		}
