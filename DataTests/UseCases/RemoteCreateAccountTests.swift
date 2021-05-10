@@ -12,7 +12,7 @@ import Data
 class RemoteCreateAccountTests: XCTestCase {
 
     func test_should_call_httpClient_with_correct_url() throws {
-		let testURL = self.makeURL()
+		let testURL = makeURL()
 		let (sut, httpClientSpy) = self.makeSut(with: testURL)
 		
 		sut.create(self.makeCreateAccountModel()) { _ in }
@@ -71,12 +71,6 @@ extension RemoteCreateAccountTests {
 		return (sut, httpClientSpy)
 	}
 	
-	func checkMemoryLeak(for instance: AnyObject, file: StaticString = #filePath, line: UInt = #line) {
-		addTeardownBlock { [weak instance] in
-			XCTAssertNil(instance, file: file, line: line)
-		}
-	}
-	
 	func expect(_ sut: RamoteCreateAccount, completeWith expectedResult: Result<AccountModel, DomainError>, when action: () -> Void, file: StaticString = #filePath, line: UInt = #line) {
 		let exp = expectation(description: "waiting...")
 		sut.create(self.makeCreateAccountModel()) { receivedResult in
@@ -96,39 +90,7 @@ extension RemoteCreateAccountTests {
 		wait(for: [exp], timeout: 1)
 	}
 	
-	func makeInvalidData() -> Data {
-		return Data("invalid_data".utf8)
-	}
-	
-	func makeURL() -> URL {
-		return URL(string: "https://any-url")!
-	}
-	
 	func makeCreateAccountModel() -> CreateAccountModel {
 		return CreateAccountModel(name: "nome", email: "a@b.c", password: "123", passwordConfirmation: "123")
-	}
-	
-	func makeAccountModel() -> AccountModel {
-		return AccountModel(id: "1", name: "nome", email: "a@b.c", password: "123")
-	}
-	
-	class HttpClientSpy: HttpPostClient {
-		var urls = [URL]()
-		var data: Data?
-		var completion: ((Result<Data, HttpError>) -> Void)?
-		
-		func post(to url: URL, with data: Data?, completion: @escaping (Result<Data, HttpError>) -> Void) {
-			self.urls.append(url)
-			self.data = data
-			self.completion = completion
-		}
-		
-		func completionWithError(error: HttpError) {
-			self.completion?(.failure(error))
-		}
-		
-		func completionWithData(_ data: Data) {
-			self.completion?(.success(data))
-		}
 	}
 }

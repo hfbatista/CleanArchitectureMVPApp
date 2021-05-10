@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		1DB76C0E2646E027005006C1 /* ExtensionHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DB76C0D2646E027005006C1 /* ExtensionHelpers.swift */; };
+		1DB76C112648E0FB005006C1 /* TestExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DB76C102648E0FB005006C1 /* TestExtensions.swift */; };
+		1DB76C132648E1C1005006C1 /* TestFactories.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DB76C122648E1C1005006C1 /* TestFactories.swift */; };
+		1DB76C162648E2A8005006C1 /* HttpClientSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DB76C152648E2A8005006C1 /* HttpClientSpy.swift */; };
+		1DB76C182648E414005006C1 /* AccountModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DB76C172648E414005006C1 /* AccountModelFactory.swift */; };
 		1DBD17CE26462C34000B8FD2 /* CreateAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DBD17CD26462C34000B8FD2 /* CreateAccount.swift */; };
 		1DBD17D026462E0E000B8FD2 /* AccountModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DBD17CF26462E0E000B8FD2 /* AccountModel.swift */; };
 		1DBD17DF26462E65000B8FD2 /* Data.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DBD17D626462E65000B8FD2 /* Data.framework */; };
@@ -54,6 +58,10 @@
 
 /* Begin PBXFileReference section */
 		1DB76C0D2646E027005006C1 /* ExtensionHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionHelpers.swift; sourceTree = "<group>"; };
+		1DB76C102648E0FB005006C1 /* TestExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestExtensions.swift; sourceTree = "<group>"; };
+		1DB76C122648E1C1005006C1 /* TestFactories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestFactories.swift; sourceTree = "<group>"; };
+		1DB76C152648E2A8005006C1 /* HttpClientSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpClientSpy.swift; sourceTree = "<group>"; };
+		1DB76C172648E414005006C1 /* AccountModelFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountModelFactory.swift; sourceTree = "<group>"; };
 		1DBD17C526462B01000B8FD2 /* Domain.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Domain.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DBD17C826462B01000B8FD2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1DBD17CD26462C34000B8FD2 /* CreateAccount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccount.swift; sourceTree = "<group>"; };
@@ -113,6 +121,24 @@
 			path = ExtensionHelpers;
 			sourceTree = "<group>";
 		};
+		1DB76C0F2648E0F1005006C1 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				1DB76C102648E0FB005006C1 /* TestExtensions.swift */,
+				1DB76C122648E1C1005006C1 /* TestFactories.swift */,
+				1DB76C172648E414005006C1 /* AccountModelFactory.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		1DB76C142648E278005006C1 /* Http */ = {
+			isa = PBXGroup;
+			children = (
+				1DB76C152648E2A8005006C1 /* HttpClientSpy.swift */,
+			);
+			path = Http;
+			sourceTree = "<group>";
+		};
 		1DBD17AB26462A9E000B8FD2 = {
 			isa = PBXGroup;
 			children = (
@@ -159,6 +185,8 @@
 		1DBD17E226462E65000B8FD2 /* DataTests */ = {
 			isa = PBXGroup;
 			children = (
+				1DB76C142648E278005006C1 /* Http */,
+				1DB76C0F2648E0F1005006C1 /* Helpers */,
 				1DBD17FB26464E3D000B8FD2 /* UseCases */,
 				1DBD17E526462E65000B8FD2 /* Info.plist */,
 			);
@@ -399,7 +427,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1DB76C132648E1C1005006C1 /* TestFactories.swift in Sources */,
+				1DB76C162648E2A8005006C1 /* HttpClientSpy.swift in Sources */,
 				1DBD17E426462E65000B8FD2 /* RemoteCreateAccountTests.swift in Sources */,
+				1DB76C182648E414005006C1 /* AccountModelFactory.swift in Sources */,
+				1DB76C112648E0FB005006C1 /* TestExtensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
