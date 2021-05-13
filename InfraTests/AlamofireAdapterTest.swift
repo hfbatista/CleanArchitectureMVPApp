@@ -22,7 +22,7 @@ class AlamoFireAdapter {
 
 class AlamofireAdapterTest: XCTestCase {
 	
-    func test_() throws {
+    func test_post_should_make_request_with_valid_url_and_method() throws {
 		let url = makeURL()
 		let urlConfiguration = URLSessionConfiguration.default
 		urlConfiguration.protocolClasses = [UrlProtocolStub.self]
