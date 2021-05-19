@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		1D10A0312649AEDE005A1422 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 1D10A0302649AEDE005A1422 /* Alamofire */; };
 		1D9E62C72655C1F400B1A134 /* AlamofireAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D9E62C62655C1F400B1A134 /* AlamofireAdapter.swift */; };
+		1D9E62CB2655C4C600B1A134 /* UrlProtocolStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D9E62CA2655C4C600B1A134 /* UrlProtocolStub.swift */; };
 		1DB76C0E2646E027005006C1 /* ExtensionHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DB76C0D2646E027005006C1 /* ExtensionHelpers.swift */; };
 		1DB76C112648E0FB005006C1 /* TestExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DB76C102648E0FB005006C1 /* TestExtensions.swift */; };
 		1DB76C132648E1C1005006C1 /* TestFactories.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DB76C122648E1C1005006C1 /* TestFactories.swift */; };
@@ -91,6 +92,7 @@
 
 /* Begin PBXFileReference section */
 		1D9E62C62655C1F400B1A134 /* AlamofireAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlamofireAdapter.swift; sourceTree = "<group>"; };
+		1D9E62CA2655C4C600B1A134 /* UrlProtocolStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UrlProtocolStub.swift; sourceTree = "<group>"; };
 		1DB76C0D2646E027005006C1 /* ExtensionHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionHelpers.swift; sourceTree = "<group>"; };
 		1DB76C102648E0FB005006C1 /* TestExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestExtensions.swift; sourceTree = "<group>"; };
 		1DB76C122648E1C1005006C1 /* TestFactories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestFactories.swift; sourceTree = "<group>"; };
@@ -169,6 +171,15 @@
 			path = Http;
 			sourceTree = "<group>";
 		};
+		1D9E62C92655C4B300B1A134 /* Http */ = {
+			isa = PBXGroup;
+			children = (
+				1DB76C2B2648E68C005006C1 /* AlamofireAdapterTest.swift */,
+				1D9E62CA2655C4C600B1A134 /* UrlProtocolStub.swift */,
+			);
+			path = Http;
+			sourceTree = "<group>";
+		};
 		1DB76C0B2646E000005006C1 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
@@ -215,7 +226,7 @@
 		1DB76C2A2648E68C005006C1 /* InfraTests */ = {
 			isa = PBXGroup;
 			children = (
-				1DB76C2B2648E68C005006C1 /* AlamofireAdapterTest.swift */,
+				1D9E62C92655C4B300B1A134 /* Http */,
 				1DB76C2D2648E68C005006C1 /* Info.plist */,
 			);
 			path = InfraTests;
@@ -576,6 +587,7 @@
 				1DB76C3B2648F251005006C1 /* TestFactories.swift in Sources */,
 				1DB76C2C2648E68C005006C1 /* AlamofireAdapterTest.swift in Sources */,
 				1DB76C3A2648F24C005006C1 /* TestExtensions.swift in Sources */,
+				1D9E62CB2655C4C600B1A134 /* UrlProtocolStub.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
