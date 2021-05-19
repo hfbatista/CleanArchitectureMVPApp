@@ -8,40 +8,7 @@
 import XCTest
 import Alamofire
 import Data
-
-class AlamoFireAdapter: HttpPostClient {
-	private let session: Session
-	
-	init(for session: Session = .default) {
-		self.session = session
-	}
-	
-	func post(to url:URL, with data: Data?, completion: @escaping (Result<Data?, HttpError>) -> Void) {
-		self.session.request(url, method: .post, parameters: data?.toJSON(), encoding: JSONEncoding.default).responseData { responseData in
-			guard let statusCode = responseData.response?.statusCode else { return completion(.failure(.noConnectivity)) }
-			switch responseData.result {
-				case .failure: completion(.failure(.noConnectivity))
-				case .success(let receivedData):
-					switch statusCode {
-						case 204:
-							completion(.success(nil))
-						case 200...299:
-							completion(.success(receivedData))
-						case 401:
-							completion(.failure(.unauthorized))
-						case 403:
-							completion(.failure(.forbidden))
-						case 400...499:
-							completion(.failure(.badRequest))
-						case 500...599:
-							completion(.failure(.serverError))
-						default:
-							completion(.failure(.noConnectivity))
-					}
-			}
-		}
-	}
-}
+import Infra
 
 class AlamofireAdapterTest: XCTestCase {
 	
@@ -96,11 +63,11 @@ class AlamofireAdapterTest: XCTestCase {
 }
 
 extension AlamofireAdapterTest {
-	func makeSUT(file: StaticString = #filePath, line: UInt = #line) -> AlamoFireAdapter {
+	func makeSUT(file: StaticString = #filePath, line: UInt = #line) -> AlamofireAdapter {
 		let urlConfiguration = URLSessionConfiguration.default
 		urlConfiguration.protocolClasses = [UrlProtocolStub.self]
 		let session = Session(configuration: urlConfiguration)
-		let sut = AlamoFireAdapter(for: session)
+		let sut = AlamofireAdapter(for: session)
 		checkMemoryLeak(for: sut, file: file, line: line)
 		return sut
 	}
