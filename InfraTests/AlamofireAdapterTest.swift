@@ -44,17 +44,7 @@ class AlamofireAdapterTest: XCTestCase {
 	}
 	
 	func test_post_should_complete_with_error_when_request_completes_with_error() throws {
-		let sut = makeSUT()
-		UrlProtocolStub.simulate(data: nil, error: makeError(), response: nil)
-		let exp = expectation(description: "Waiting...")
-		sut.post(to: makeURL(), with: makeValidData()) { result in
-			switch result {
-				case .failure(let error): XCTAssertEqual(error, .noConnectivity)
-				case .success: XCTFail("Expected ERROR and got \(result) instead")
-			}
-			exp.fulfill()
-		}
-		wait(for: [exp], timeout: 1)
+		expectedResult(.failure(.noConnectivity), when: (data: nil, response: nil, error: makeError()))
 	}
 }
 
@@ -70,12 +60,33 @@ extension AlamofireAdapterTest {
 	
 	func testRequest(for url: URL = makeURL(), data: Data?, action: @escaping (URLRequest) -> Void) {
 		let sut = makeSUT()
-		sut.post(to: url, with: data){ _ in }
 		let exp = expectation(description: "Waiting")
-		UrlProtocolStub.observeRequest { request in
-			action(request)
+		var request: URLRequest?
+		sut.post(to: url, with: data){ _ in exp.fulfill()}
+		UrlProtocolStub.observeRequest { request = $0}
+		wait(for: [exp], timeout: 1)
+		
+		action(request!)
+	}
+	
+	func expectedResult(_ expectedResult: Result<Data, HttpError>, when stub: (data: Data?, response: HTTPURLResponse?, error: Error?), file: StaticString = #filePath, line: UInt = #line) {
+		let sut = makeSUT()
+		UrlProtocolStub.simulate(data: stub.data, error: stub.error, response: stub.response)
+		let exp = expectation(description: "Waiting...")
+		
+		sut.post(to: makeURL(), with: makeValidData()) { receivedResult in
+			switch (expectedResult, receivedResult) {
+				case (.failure(let expectedError), .failure(let receivedError)):
+					XCTAssertEqual(expectedError, receivedError, file: file, line: line)
+					
+				case (.success(let expectedData), .success(let receivedData)):
+					XCTAssertEqual(expectedData, receivedData, file: file, line: line)
+					
+				default: XCTFail("Expected \(expectedResult) and got \(receivedResult) instead")
+			}
 			exp.fulfill()
 		}
+		
 		wait(for: [exp], timeout: 1)
 	}
 }
