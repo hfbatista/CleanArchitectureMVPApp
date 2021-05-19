@@ -22,7 +22,7 @@ public final class RamoteCreateAccount: CreateAccount {
 			guard self != nil else { return }
 			switch result {
 				case .success (let data):
-					if let model: AccountModel = data.toModel() {
+					if let model: AccountModel = data?.toModel() {
 						completion(.success(model))
 					} else {
 						completion(.failure(.invalidData))
