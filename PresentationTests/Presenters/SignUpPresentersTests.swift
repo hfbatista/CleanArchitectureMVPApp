@@ -6,50 +6,7 @@
 //
 
 import XCTest
-
-class SignUpPresenter {
-	var alertView: AlertView?
-	
-	init(alertView: AlertView) {
-		self.alertView = alertView
-	}
-	
-	func signUp(viewModel: SignUpViewModel) {
-		if let message = validade(viewModel) {
-			self.alertView?.showMessage(viewModel: AlertViewModel(title:  "Falha na validação", message: message))
-		}
-	}
-	
-	private func validade(_ viewModel: SignUpViewModel) -> String?{
-		if viewModel.name == nil || viewModel.name!.isEmpty {
-			return "O campo nome é obrigatório!"
-		} else if viewModel.email == nil || viewModel.email!.isEmpty {
-			return "O campo email é obrigatório!"
-		} else if viewModel.password == nil || viewModel.password!.isEmpty {
-			return "O campo senha é obrigatório!"
-		} else if viewModel.passwordConfirmation == nil || viewModel.passwordConfirmation!.isEmpty {
-			return "O campo confirmar senha é obrigatório!"
-		}
-		
-		return nil
-	}
-}
-
-protocol AlertView {
-	func showMessage(viewModel: AlertViewModel)
-}
-
-struct AlertViewModel: Equatable{
-	var title: String
-	var message: String
-}
-
-struct SignUpViewModel {
-	var name: String?
-	var email: String?
-	var password: String?
-	var passwordConfirmation: String?
-}
+import Presentation
 
 class SignUpPresentersTests: XCTestCase {
 	
