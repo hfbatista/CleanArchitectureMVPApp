@@ -23,16 +23,20 @@ public struct SignUpViewModel {
 }
 
 public final class SignUpPresenter {
-	var alertView: AlertView?
+	var alertView: AlertView
+	var emailValidator: EmailValidator
 	
-	public init(alertView: AlertView) {
+	public init(alertView: AlertView, emailValidator: EmailValidator) {
 		self.alertView = alertView
+		self.emailValidator = emailValidator
 	}
 	
 	public func signUp(viewModel: SignUpViewModel) {
 		if let message = validade(viewModel) {
-			self.alertView?.showMessage(viewModel: AlertViewModel(title:  "Falha na validação", message: message))
+			self.alertView.showMessage(viewModel: AlertViewModel(title:  "Falha na validação", message: message))
 		}
+		
+		
 	}
 	
 	private func validade(_ viewModel: SignUpViewModel) -> String?{
@@ -44,7 +48,11 @@ public final class SignUpPresenter {
 			return "O campo senha é obrigatório!"
 		} else if viewModel.passwordConfirmation == nil || viewModel.passwordConfirmation!.isEmpty {
 			return "O campo confirmar senha é obrigatório!"
+		} else if viewModel.password != viewModel.passwordConfirmation {
+			return "Os campos de senha devem ser iguais!"
 		}
+		
+		_ = emailValidator.isValid(email: viewModel.email!)
 		
 		return nil
 	}
