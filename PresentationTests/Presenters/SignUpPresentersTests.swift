@@ -7,6 +7,7 @@
 
 import XCTest
 import Presentation
+import Domain
 
 class SignUpPresentersTests: XCTestCase {
 	
@@ -68,11 +69,19 @@ class SignUpPresentersTests: XCTestCase {
 		sut.signUp(viewModel: signUpViewmModel)
 		XCTAssertEqual(emailValidatorSpy.email, signUpViewmModel.email)
 	}
+	
+	func test_signUp_should_call_add_account_with_correct_values() throws {
+		let createAccountSpy = CreateAccountSpy()
+		let sut = makeSUT(createAccount: createAccountSpy)
+		sut.signUp(viewModel: makeSignUpViewModel())
+		
+		XCTAssertEqual(createAccountSpy.createAccountModel, makeCreateAccountModel())
+	}
 }
 	
 extension SignUpPresentersTests {
-	func makeSUT(alertView:AlertViewSpy = AlertViewSpy(), emailValidator: EmailValidatorSpy = EmailValidatorSpy()) -> SignUpPresenter {
-		return SignUpPresenter(alertView: alertView, emailValidator: emailValidator)
+	func makeSUT(alertView:AlertViewSpy = AlertViewSpy(), emailValidator: EmailValidatorSpy = EmailValidatorSpy(), createAccount: CreateAccountSpy = CreateAccountSpy()) -> SignUpPresenter {
+		return SignUpPresenter(alertView: alertView, emailValidator: emailValidator, createAccount: createAccount)
 	}
 	
 	func makeSignUpViewModel(name: String? = "any_name", email: String? = "123@teste.com", password: String? = "secret", passwordConfirmation: String? = "secret") -> SignUpViewModel {
@@ -99,6 +108,14 @@ extension SignUpPresentersTests {
 		func isValid(email: String) -> Bool{
 			self.email = email
 			return validFlag
+		}
+	}
+	
+	class CreateAccountSpy: CreateAccount {
+		var createAccountModel: CreateAccountModel?
+		
+		func create(_ createAccountModel: CreateAccountModel, completion: @escaping (Result<AccountModel, DomainError>) -> Void) {
+			self.createAccountModel = createAccountModel
 		}
 	}
 }

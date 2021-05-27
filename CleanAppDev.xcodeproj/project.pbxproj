@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1D10A0312649AEDE005A1422 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 1D10A0302649AEDE005A1422 /* Alamofire */; };
+		1D5260D5265F352C00AD96E4 /* AccountModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DB76C172648E414005006C1 /* AccountModelFactory.swift */; };
 		1D823C4F2656B11E0068C2AC /* SignUpPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D823C4E2656B11E0068C2AC /* SignUpPresenter.swift */; };
 		1D823C532656B2350068C2AC /* AlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D823C522656B2350068C2AC /* AlertView.swift */; };
 		1D823C562656B2940068C2AC /* Domain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DBD17C526462B01000B8FD2 /* Domain.framework */; };
@@ -850,6 +851,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1D5260D5265F352C00AD96E4 /* AccountModelFactory.swift in Sources */,
 				1DB1B2832656A58C00443628 /* SignUpPresentersTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

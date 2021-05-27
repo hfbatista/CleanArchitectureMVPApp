@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Domain
 
 public struct SignUpViewModel {
 	public var name: String?
@@ -25,15 +26,20 @@ public struct SignUpViewModel {
 public final class SignUpPresenter {
 	var alertView: AlertView
 	var emailValidator: EmailValidator
+	var createAccount: CreateAccount
 	
-	public init(alertView: AlertView, emailValidator: EmailValidator) {
+	public init(alertView: AlertView, emailValidator: EmailValidator, createAccount: CreateAccount) {
 		self.alertView = alertView
 		self.emailValidator = emailValidator
+		self.createAccount = createAccount
 	}
 	
 	public func signUp(viewModel: SignUpViewModel) {
 		if let message = validade(viewModel) {
 			self.alertView.showMessage(viewModel: AlertViewModel(title:  "Falha na validação", message: message))
+		} else {
+			let createAccountModel = CreateAccountModel(name: viewModel.name!, email: viewModel.email!, password: viewModel.password!, passwordConfirmation: viewModel.passwordConfirmation!)
+			self.createAccount.create(createAccountModel) { _ in }
 		}
 	}
 	
