@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		1D10A0312649AEDE005A1422 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 1D10A0302649AEDE005A1422 /* Alamofire */; };
 		1D5123522672D47C00795EB3 /* TestExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DB76C102648E0FB005006C1 /* TestExtensions.swift */; };
+		1D5123542672D7CE00795EB3 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D5123532672D7CE00795EB3 /* LoadingView.swift */; };
 		1D5260D5265F352C00AD96E4 /* AccountModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DB76C172648E414005006C1 /* AccountModelFactory.swift */; };
 		1D823C4F2656B11E0068C2AC /* SignUpPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D823C4E2656B11E0068C2AC /* SignUpPresenter.swift */; };
 		1D823C532656B2350068C2AC /* AlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D823C522656B2350068C2AC /* AlertView.swift */; };
@@ -148,6 +149,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		1D5123532672D7CE00795EB3 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		1D823C4E2656B11E0068C2AC /* SignUpPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpPresenter.swift; sourceTree = "<group>"; };
 		1D823C522656B2350068C2AC /* AlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertView.swift; sourceTree = "<group>"; };
 		1D823C5D2656D3AA0068C2AC /* EmailValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailValidator.swift; sourceTree = "<group>"; };
@@ -267,6 +269,7 @@
 			isa = PBXGroup;
 			children = (
 				1D823C522656B2350068C2AC /* AlertView.swift */,
+				1D5123532672D7CE00795EB3 /* LoadingView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -843,6 +846,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1D823C4F2656B11E0068C2AC /* SignUpPresenter.swift in Sources */,
+				1D5123542672D7CE00795EB3 /* LoadingView.swift in Sources */,
 				1D823C532656B2350068C2AC /* AlertView.swift in Sources */,
 				1D823C5E2656D3AA0068C2AC /* EmailValidator.swift in Sources */,
 			);

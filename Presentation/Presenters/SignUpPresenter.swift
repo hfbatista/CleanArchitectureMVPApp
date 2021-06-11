@@ -24,14 +24,16 @@ public struct SignUpViewModel {
 }
 
 public final class SignUpPresenter {
-	var alertView: AlertView
-	var emailValidator: EmailValidator
-	var createAccount: CreateAccount
+	private var alertView: AlertView
+	private var emailValidator: EmailValidator
+	private var createAccount: CreateAccount
+	private var loadingView: LoadingView
 	
-	public init(alertView: AlertView, emailValidator: EmailValidator, createAccount: CreateAccount) {
+	public init(loadingView: LoadingView, alertView: AlertView, emailValidator: EmailValidator, createAccount: CreateAccount) {
 		self.alertView = alertView
 		self.emailValidator = emailValidator
 		self.createAccount = createAccount
+		self.loadingView = loadingView
 	}
 	
 	public func signUp(viewModel: SignUpViewModel) {
@@ -39,6 +41,7 @@ public final class SignUpPresenter {
 			self.alertView.showMessage(viewModel: AlertViewModel(title:  "Falha na validação", message: message))
 		} else {
 			let createAccountModel = CreateAccountModel(name: viewModel.name!, email: viewModel.email!, password: viewModel.password!, passwordConfirmation: viewModel.passwordConfirmation!)
+			self.loadingView.display(viewModel: LoadingViewModel(isLoading: true))
 			self.createAccount.create(createAccountModel) { [weak self] result in
 				guard let self = self else { return }
 				switch result {
