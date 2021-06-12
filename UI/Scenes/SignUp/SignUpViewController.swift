@@ -31,11 +31,10 @@ final class SignUpViewController: UIViewController {
 	}
 	
 	@objc private func saveButtonTapped() {
-		let viewModel = SignUpViewModel(name: nameTextField?.text,
-										email: emailTextField?.text,
-										password: passwordTextField?.text,
-										passwordConfirmation: confirmationTextField?.text)
-		signUp?(viewModel)
+		signUp?(SignUpViewModel(name: nameTextField?.text,
+								email: emailTextField?.text,
+								password: passwordTextField?.text,
+								passwordConfirmation: confirmationTextField?.text))
 	}
 	
 }
@@ -43,8 +42,10 @@ final class SignUpViewController: UIViewController {
 extension SignUpViewController: LoadingView {
 	func display(viewModel: LoadingViewModel) {
 		if viewModel.isLoading {
+			view.isUserInteractionEnabled = false
 			self.loadingIndicator?.startAnimating()
 		} else {
+			view.isUserInteractionEnabled = true
 			self.loadingIndicator?.stopAnimating()
 		}
 	}
