@@ -218,9 +218,6 @@ extension SignUpPresentersTests {
 		func display(viewModel: LoadingViewModel) {
 			self.emit?(viewModel)
 		}
-		
-
-		
 	}
 	
 	class EmailValidatorSpy: EmailValidator {
