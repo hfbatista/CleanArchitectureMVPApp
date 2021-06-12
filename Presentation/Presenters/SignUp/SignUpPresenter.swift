@@ -9,10 +9,10 @@ import Foundation
 import Domain
 
 public final class SignUpPresenter {
-	private var alertView: AlertView
-	private var emailValidator: EmailValidator
-	private var createAccount: CreateAccount
-	private var loadingView: LoadingView
+	private let alertView: AlertView
+	private let emailValidator: EmailValidator
+	private let createAccount: CreateAccount
+	private let loadingView: LoadingView
 	
 	public init(loadingView: LoadingView, alertView: AlertView, emailValidator: EmailValidator, createAccount: CreateAccount) {
 		self.alertView = alertView
