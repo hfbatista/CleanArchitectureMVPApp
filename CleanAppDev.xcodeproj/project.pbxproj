@@ -11,6 +11,7 @@
 		1D1E22F026747897003B86B2 /* SignUp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1D1E22EF26747897003B86B2 /* SignUp.storyboard */; };
 		1D1E22F726751A79003B86B2 /* TestsExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D1E22F626751A79003B86B2 /* TestsExtensions.swift */; };
 		1D1E22FA26752533003B86B2 /* UIViewControllerExtensdions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D1E22F926752533003B86B2 /* UIViewControllerExtensdions.swift */; };
+		1D1E22FC2675267B003B86B2 /* Storyboarded.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D1E22FB2675267B003B86B2 /* Storyboarded.swift */; };
 		1D5123522672D47C00795EB3 /* TestExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DB76C102648E0FB005006C1 /* TestExtensions.swift */; };
 		1D5123542672D7CE00795EB3 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D5123532672D7CE00795EB3 /* LoadingView.swift */; };
 		1D51235A2674609E00795EB3 /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D5123592674609E00795EB3 /* SignUpViewModel.swift */; };
@@ -192,6 +193,7 @@
 		1D1E22EF26747897003B86B2 /* SignUp.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignUp.storyboard; sourceTree = "<group>"; };
 		1D1E22F626751A79003B86B2 /* TestsExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestsExtensions.swift; sourceTree = "<group>"; };
 		1D1E22F926752533003B86B2 /* UIViewControllerExtensdions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtensdions.swift; sourceTree = "<group>"; };
+		1D1E22FB2675267B003B86B2 /* Storyboarded.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboarded.swift; sourceTree = "<group>"; };
 		1D5123532672D7CE00795EB3 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		1D5123592674609E00795EB3 /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
 		1D51235B2674613800795EB3 /* SignUpMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpMapper.swift; sourceTree = "<group>"; };
@@ -374,6 +376,7 @@
 			isa = PBXGroup;
 			children = (
 				1D1E22F926752533003B86B2 /* UIViewControllerExtensdions.swift */,
+				1D1E22FB2675267B003B86B2 /* Storyboarded.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -1108,6 +1111,7 @@
 			files = (
 				1DD4BB0226747609009A3903 /* SignUpViewController.swift in Sources */,
 				1D1E22FA26752533003B86B2 /* UIViewControllerExtensdions.swift in Sources */,
+				1D1E22FC2675267B003B86B2 /* Storyboarded.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
