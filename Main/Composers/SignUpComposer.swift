@@ -8,9 +8,20 @@
 import Foundation
 import Domain
 import UI
+import Presentation
+import Validation
 		
 public final class SignUpComposer {
 	public static func composeViewControllerWith(createAccount: CreateAccount) -> SignUpViewController {
-		return ControllerFactory.makeSignUp(createAccount: createAccount)
+		let controller = SignUpViewController.instantiate()
+		let emailValidatorAdapter = EmailValidatorAdapter()
+		let presenter = SignUpPresenter(loadingView: WeakVarProxy(controller),
+										alertView: WeakVarProxy(controller),
+										emailValidator: emailValidatorAdapter,
+										createAccount: createAccount)
+		
+		controller.signUp = presenter.signUp
+		
+		return controller
 	}
 }
