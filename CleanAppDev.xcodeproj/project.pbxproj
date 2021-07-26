@@ -58,6 +58,8 @@
 		1D823C562656B2940068C2AC /* Domain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DBD17C526462B01000B8FD2 /* Domain.framework */; };
 		1D823C572656B2940068C2AC /* Domain.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1DBD17C526462B01000B8FD2 /* Domain.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		1D823C5E2656D3AA0068C2AC /* EmailValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D823C5D2656D3AA0068C2AC /* EmailValidator.swift */; };
+		1D8987BB26AF6C5D004EC882 /* Enviroment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D8987BA26AF6C5D004EC882 /* Enviroment.swift */; };
+		1D8987BC26AF6F24004EC882 /* Enviroment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D8987BA26AF6C5D004EC882 /* Enviroment.swift */; };
 		1D9E62C72655C1F400B1A134 /* AlamofireAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D9E62C62655C1F400B1A134 /* AlamofireAdapter.swift */; };
 		1D9E62CB2655C4C600B1A134 /* UrlProtocolStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D9E62CA2655C4C600B1A134 /* UrlProtocolStub.swift */; };
 		1D9E62D32655CBFA00B1A134 /* AddAccountIntegrationTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D9E62D22655CBFA00B1A134 /* AddAccountIntegrationTest.swift */; };
@@ -345,6 +347,9 @@
 		1D823C4E2656B11E0068C2AC /* SignUpPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpPresenter.swift; sourceTree = "<group>"; };
 		1D823C522656B2350068C2AC /* AlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertView.swift; sourceTree = "<group>"; };
 		1D823C5D2656D3AA0068C2AC /* EmailValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailValidator.swift; sourceTree = "<group>"; };
+		1D8987B826AF6BC9004EC882 /* Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Debug.xcconfig; sourceTree = "<group>"; };
+		1D8987B926AF6C1C004EC882 /* Release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Release.xcconfig; sourceTree = "<group>"; };
+		1D8987BA26AF6C5D004EC882 /* Enviroment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enviroment.swift; sourceTree = "<group>"; };
 		1D9E62C62655C1F400B1A134 /* AlamofireAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlamofireAdapter.swift; sourceTree = "<group>"; };
 		1D9E62CA2655C4C600B1A134 /* UrlProtocolStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UrlProtocolStub.swift; sourceTree = "<group>"; };
 		1D9E62D02655CBFA00B1A134 /* UseCasesIntegrationTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UseCasesIntegrationTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -573,6 +578,7 @@
 		1D1E232526754547003B86B2 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				1D8987B726AF6B9D004EC882 /* Env */,
 				1D1E237726755D5D003B86B2 /* Proxies */,
 				1D1E2372267550D5003B86B2 /* Composers */,
 				1D1E236D2675487C003B86B2 /* Factories */,
@@ -720,6 +726,16 @@
 				1D823C5D2656D3AA0068C2AC /* EmailValidator.swift */,
 			);
 			path = Validators;
+			sourceTree = "<group>";
+		};
+		1D8987B726AF6B9D004EC882 /* Env */ = {
+			isa = PBXGroup;
+			children = (
+				1D8987BA26AF6C5D004EC882 /* Enviroment.swift */,
+				1D8987B826AF6BC9004EC882 /* Debug.xcconfig */,
+				1D8987B926AF6C1C004EC882 /* Release.xcconfig */,
+			);
+			path = Env;
 			sourceTree = "<group>";
 		};
 		1D9E62C82655C39800B1A134 /* Http */ = {
@@ -1507,6 +1523,7 @@
 			files = (
 				1D1E237126755060003B86B2 /* UseCaseFactory.swift in Sources */,
 				1D1E232726754547003B86B2 /* AppDelegate.swift in Sources */,
+				1D8987BB26AF6C5D004EC882 /* Enviroment.swift in Sources */,
 				1D1E232926754547003B86B2 /* SceneDelegate.swift in Sources */,
 				1D1E237926755D70003B86B2 /* WeakVarProxy.swift in Sources */,
 				1D1E2374267550E5003B86B2 /* SignUpComposer.swift in Sources */,
@@ -1519,6 +1536,7 @@
 			files = (
 				1D1E2375267558D1003B86B2 /* CreateAccountSpy.swift in Sources */,
 				1D1E23762675590C003B86B2 /* TestExtensions.swift in Sources */,
+				1D8987BC26AF6F24004EC882 /* Enviroment.swift in Sources */,
 				1D1E233E2675454A003B86B2 /* SignUpIntegrationTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1851,6 +1869,7 @@
 		};
 		1D1E234C2675454A003B86B2 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1D8987B826AF6BC9004EC882 /* Debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -1870,6 +1889,7 @@
 		};
 		1D1E234D2675454A003B86B2 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1D8987B926AF6C1C004EC882 /* Release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

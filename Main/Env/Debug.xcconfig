@@ -1,0 +1,9 @@
+//
+//  Debug.xcconfig
+//  CleanAppDev
+//
+//  Created by Henrique Batista on 26/07/21.
+//
+
+ API_BASE_URL = https:/$()/fordevs.herokuapp.com/api/
+
