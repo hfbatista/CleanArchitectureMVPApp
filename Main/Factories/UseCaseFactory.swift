@@ -19,6 +19,7 @@ final class UseCaseFactory {
 	}
 	
 	static func makeRemoteCreateAccount() -> CreateAccount {
-		return RamoteCreateAccount(url: makeUrl(endpoint: "signup"), httpClient: httpClient)
+		let ramoteCreateAccount = RamoteCreateAccount(url: makeUrl(endpoint: "signup"), httpClient: httpClient)
+		return MainDispatchQueueDecorator(ramoteCreateAccount)
 	}
 }
