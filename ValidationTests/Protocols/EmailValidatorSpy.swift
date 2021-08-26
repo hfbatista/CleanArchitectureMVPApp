@@ -6,14 +6,18 @@
 //
 
 import Foundation
-import Presentation
+import Validation
 
-class EmailValidatorSpy: EmailValidator {
+class EmailValidatorSpy: EmailValidatorProtocol {
 	var validFlag = true
 	var email: String?
 	
 	func isValid(email: String) -> Bool{
 		self.email = email
 		return validFlag
+	}
+	
+	func simulateInvalidEmail() {
+		self.validFlag = false
 	}
 }

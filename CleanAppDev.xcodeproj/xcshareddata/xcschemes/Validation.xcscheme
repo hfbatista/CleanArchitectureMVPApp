@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "1D1E232326754547003B86B2"
-               BuildableName = "Main.app"
-               BlueprintName = "Main"
+               BlueprintIdentifier = "1D1E230126753CE3003B86B2"
+               BuildableName = "Validation.framework"
+               BlueprintName = "Validation"
                ReferencedContainer = "container:CleanAppDev.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -34,9 +34,9 @@
             testExecutionOrdering = "random">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "1D1E23382675454A003B86B2"
-               BuildableName = "MainTests.xctest"
-               BlueprintName = "MainTests"
+               BlueprintIdentifier = "1D1E230926753CE4003B86B2"
+               BuildableName = "ValidationTests.xctest"
+               BlueprintName = "ValidationTests"
                ReferencedContainer = "container:CleanAppDev.xcodeproj">
             </BuildableReference>
          </TestableReference>
@@ -52,16 +52,6 @@
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
       allowLocationSimulation = "YES">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "1D1E232326754547003B86B2"
-            BuildableName = "Main.app"
-            BlueprintName = "Main"
-            ReferencedContainer = "container:CleanAppDev.xcodeproj">
-         </BuildableReference>
-      </BuildableProductRunnable>
    </LaunchAction>
    <ProfileAction
       buildConfiguration = "Release"
@@ -69,16 +59,15 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
+      <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "1D1E232326754547003B86B2"
-            BuildableName = "Main.app"
-            BlueprintName = "Main"
+            BlueprintIdentifier = "1D1E230126753CE3003B86B2"
+            BuildableName = "Validation.framework"
+            BlueprintName = "Validation"
             ReferencedContainer = "container:CleanAppDev.xcodeproj">
          </BuildableReference>
-      </BuildableProductRunnable>
+      </MacroExpansion>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">

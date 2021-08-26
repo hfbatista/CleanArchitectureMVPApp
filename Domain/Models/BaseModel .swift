@@ -13,4 +13,9 @@ public extension BaseModel {
 	func toData() -> Data? {
 		return try? JSONEncoder().encode(self)
 	}
+	
+	func toJSON() -> [String: Any]? {
+		guard let data =  self.toData() else { return nil }
+		return try? JSONSerialization.jsonObject(with: data, options: .allowFragments) as? [String: Any]
+	}
 }
