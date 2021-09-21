@@ -46,7 +46,6 @@
 		1D5123522672D47C00795EB3 /* TestExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DB76C102648E0FB005006C1 /* TestExtensions.swift */; };
 		1D5123542672D7CE00795EB3 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D5123532672D7CE00795EB3 /* LoadingView.swift */; };
 		1D51235A2674609E00795EB3 /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D5123592674609E00795EB3 /* SignUpViewModel.swift */; };
-		1D51235C2674613800795EB3 /* SignUpMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D51235B2674613800795EB3 /* SignUpMapper.swift */; };
 		1D5123602674638600795EB3 /* AlertViewSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D51235F2674638600795EB3 /* AlertViewSpy.swift */; };
 		1D5123652674642700795EB3 /* LoadingViewSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D5123642674642700795EB3 /* LoadingViewSpy.swift */; };
 		1D5123682674648600795EB3 /* CreateAccountSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D5123672674648600795EB3 /* CreateAccountSpy.swift */; };
@@ -363,7 +362,6 @@
 		1D4DD22726D7446700BD665E /* ValidationSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationSpy.swift; sourceTree = "<group>"; };
 		1D5123532672D7CE00795EB3 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		1D5123592674609E00795EB3 /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
-		1D51235B2674613800795EB3 /* SignUpMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpMapper.swift; sourceTree = "<group>"; };
 		1D51235F2674638600795EB3 /* AlertViewSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertViewSpy.swift; sourceTree = "<group>"; };
 		1D512362267463F000795EB3 /* EmailValidatorSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailValidatorSpy.swift; sourceTree = "<group>"; };
 		1D5123642674642700795EB3 /* LoadingViewSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingViewSpy.swift; sourceTree = "<group>"; };
@@ -679,7 +677,6 @@
 			children = (
 				1D823C4E2656B11E0068C2AC /* SignUpPresenter.swift */,
 				1D5123592674609E00795EB3 /* SignUpViewModel.swift */,
-				1D51235B2674613800795EB3 /* SignUpMapper.swift */,
 			);
 			path = SignUp;
 			sourceTree = "<group>";
@@ -1708,7 +1705,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1D51235C2674613800795EB3 /* SignUpMapper.swift in Sources */,
 				1D89B9D326C6A4A50072A403 /* ValidationProtocol.swift in Sources */,
 				1D823C4F2656B11E0068C2AC /* SignUpPresenter.swift in Sources */,
 				1D5123542672D7CE00795EB3 /* LoadingView.swift in Sources */,
