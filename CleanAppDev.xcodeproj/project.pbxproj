@@ -87,7 +87,6 @@
 		1DB76C112648E0FB005006C1 /* TestExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DB76C102648E0FB005006C1 /* TestExtensions.swift */; };
 		1DB76C132648E1C1005006C1 /* TestFactories.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DB76C122648E1C1005006C1 /* TestFactories.swift */; };
 		1DB76C162648E2A8005006C1 /* HttpClientSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DB76C152648E2A8005006C1 /* HttpClientSpy.swift */; };
-		1DB76C182648E414005006C1 /* AccountModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DB76C172648E414005006C1 /* AccountModelFactory.swift */; };
 		1DB76C272648E68C005006C1 /* Infra.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DB76C1E2648E68C005006C1 /* Infra.framework */; };
 		1DB76C2C2648E68C005006C1 /* AlamofireAdapterTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DB76C2B2648E68C005006C1 /* AlamofireAdapterTest.swift */; };
 		1DB76C352648F1A3005006C1 /* Data.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DBD17D626462E65000B8FD2 /* Data.framework */; };
@@ -106,6 +105,7 @@
 		1DBD1801264654EE000B8FD2 /* DomainError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DBD1800264654EE000B8FD2 /* DomainError.swift */; };
 		1DBD180426465884000B8FD2 /* HttpError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DBD180326465884000B8FD2 /* HttpError.swift */; };
 		1DD4BB0226747609009A3903 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DD4BB0126747609009A3903 /* SignUpViewController.swift */; };
+		1DFE9D4B26FA9C66006C23FC /* AccountModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DB76C172648E414005006C1 /* AccountModelFactory.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -1782,7 +1782,7 @@
 				1DB76C132648E1C1005006C1 /* TestFactories.swift in Sources */,
 				1DB76C162648E2A8005006C1 /* HttpClientSpy.swift in Sources */,
 				1DBD17E426462E65000B8FD2 /* RemoteCreateAccountTests.swift in Sources */,
-				1DB76C182648E414005006C1 /* AccountModelFactory.swift in Sources */,
+				1DFE9D4B26FA9C66006C23FC /* AccountModelFactory.swift in Sources */,
 				1DB76C112648E0FB005006C1 /* TestExtensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

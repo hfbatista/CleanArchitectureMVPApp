@@ -44,6 +44,11 @@
 			<key>orderHint</key>
 			<integer>5</integer>
 		</dict>
+		<key>UseCaseIntegrationTests.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>9</integer>
+		</dict>
 		<key>UseCasesIntegrationTests.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
@@ -83,6 +88,11 @@
 			<true/>
 		</dict>
 		<key>1D512378267469F900795EB3</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>1D9E62CF2655CBFA00B1A134</key>
 		<dict>
 			<key>primary</key>
 			<true/>

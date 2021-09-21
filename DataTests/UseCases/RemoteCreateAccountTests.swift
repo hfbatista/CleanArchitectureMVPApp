@@ -15,13 +15,13 @@ class RemoteCreateAccountTests: XCTestCase {
 		let testURL = makeURL()
 		let (sut, httpClientSpy) = self.makeSut(with: testURL)
 		
-		sut.create(self.makeCreateAccountModel()) { _ in }
+		sut.create(makeCreateAccountModel()) { _ in }
 		XCTAssertEqual(httpClientSpy.urls, [testURL])
     }
 	
 	func test_should_call_httpClient_with_correct_data() throws {
 		let (sut, httpClientSpy) = self.makeSut()
-		let createAccountModel = self.makeCreateAccountModel()
+		let createAccountModel = makeCreateAccountModel()
 		
 		sut.create(createAccountModel) { _ in }
 		XCTAssertEqual(httpClientSpy.data, createAccountModel.toData())
@@ -73,7 +73,7 @@ extension RemoteCreateAccountTests {
 	
 	func expect(_ sut: RamoteCreateAccount, completeWith expectedResult: Result<AccountModel, DomainError>, when action: () -> Void, file: StaticString = #filePath, line: UInt = #line) {
 		let exp = expectation(description: "waiting...")
-		sut.create(self.makeCreateAccountModel()) { receivedResult in
+		sut.create(makeCreateAccountModel()) { receivedResult in
 			switch ( expectedResult, receivedResult ) {
 				case (.failure(let expectedError), .failure(let receivedError)):
 					(XCTAssertEqual(expectedError, receivedError, file: file, line: line))
