@@ -9,7 +9,7 @@ import Foundation
 import Domain
 
 func makeAccountModel() -> AccountModel {
-	return AccountModel(id: "1", name: "nome", email: "a@b.c", password: "123")
+	return AccountModel(accessToken: "1")
 }
 
 func makeCreateAccountModel() -> CreateAccountModel {
