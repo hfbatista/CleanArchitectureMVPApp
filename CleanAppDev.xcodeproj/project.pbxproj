@@ -1008,9 +1008,9 @@
 		1DBD17C626462B01000B8FD2 /* Domain */ = {
 			isa = PBXGroup;
 			children = (
-				1DBD17FF264654DC000B8FD2 /* Errors */,
 				1DBD17FC26464E47000B8FD2 /* UseCases */,
 				1DBD17F926464DA8000B8FD2 /* Models */,
+				1DBD17FF264654DC000B8FD2 /* Errors */,
 				1DBD17C826462B01000B8FD2 /* Info.plist */,
 			);
 			path = Domain;
