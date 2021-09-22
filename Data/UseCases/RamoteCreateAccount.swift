@@ -27,7 +27,13 @@ public final class RamoteCreateAccount: CreateAccount {
 					} else {
 						completion(.failure(.invalidData))
 					}
-				case .failure: completion(.failure(.unexpected))
+				case .failure (let error):
+					switch error {
+						case .forbidden:
+							completion(.failure(.emailInUse))
+						default:
+							completion(.failure(.unexpected))
+					}
 			}
 		}
 	}
