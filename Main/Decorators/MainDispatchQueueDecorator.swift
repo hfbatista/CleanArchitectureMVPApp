@@ -23,7 +23,7 @@ public final class MainDispatchQueueDecorator<T> {
 
 extension MainDispatchQueueDecorator: CreateAccount where T: CreateAccount{
 	public func create(_ createAccountModel: CreateAccountModel,
-					     completion: @escaping (Result<AccountModel, DomainError>) -> Void) {
+					     completion: @escaping (CreateAccount.Result) -> Void) {
 		self.instance.create(createAccountModel) {[weak self] result in
 			self?.dispatch { completion(result) }
 		}

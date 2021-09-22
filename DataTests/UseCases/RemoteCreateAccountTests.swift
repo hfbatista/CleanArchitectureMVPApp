@@ -59,7 +59,7 @@ class RemoteCreateAccountTests: XCTestCase {
 	func test_should_not_complete_if_sut_has_been_deallocated() throws {
 		let httpClientSpy = HttpClientSpy()
 		var stu: RamoteCreateAccount? = RamoteCreateAccount(url: makeURL(), httpClient: httpClientSpy)
-		var result: Result<AccountModel, DomainError>?
+		var result: CreateAccount.Result?
 		
 		stu?.create(makeCreateAccountModel()){ result = $0 }
 		stu = nil
@@ -78,7 +78,7 @@ extension RemoteCreateAccountTests {
 		return (sut, httpClientSpy)
 	}
 	
-	func expect(_ sut: RamoteCreateAccount, completeWith expectedResult: Result<AccountModel, DomainError>, when action: () -> Void, file: StaticString = #filePath, line: UInt = #line) {
+	func expect(_ sut: RamoteCreateAccount, completeWith expectedResult: CreateAccount.Result, when action: () -> Void, file: StaticString = #filePath, line: UInt = #line) {
 		let exp = expectation(description: "waiting...")
 		sut.create(makeCreateAccountModel()) { receivedResult in
 			switch ( expectedResult, receivedResult ) {

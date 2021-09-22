@@ -8,7 +8,8 @@
 import Foundation
 
 public protocol CreateAccount {
-	func create(_ createAccountModel: CreateAccountModel, completion: @escaping (Result<AccountModel, DomainError>) ->  Void)
+	typealias Result = Swift.Result<AccountModel, DomainError>
+	func create(_ createAccountModel: CreateAccountModel, completion: @escaping (Result) ->  Void)
 }
 
 public struct CreateAccountModel: BaseModel {
