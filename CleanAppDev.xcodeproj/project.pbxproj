@@ -104,9 +104,14 @@
 		1DBD1801264654EE000B8FD2 /* DomainError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DBD1800264654EE000B8FD2 /* DomainError.swift */; };
 		1DBD180426465884000B8FD2 /* HttpError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DBD180326465884000B8FD2 /* HttpError.swift */; };
 		1DD4BB0226747609009A3903 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DD4BB0126747609009A3903 /* SignUpViewController.swift */; };
+		1DE78AD3279C8CF200CFE92D /* UIColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DE78AD2279C8CF200CFE92D /* UIColorExtensions.swift */; };
+		1DE78AD5279C908300CFE92D /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DE78AD4279C908300CFE92D /* Color.swift */; };
+		1DE78AD8279C95A700CFE92D /* RoundedTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DE78AD7279C95A700CFE92D /* RoundedTextField.swift */; };
+		1DE78ADA279C970D00CFE92D /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DE78AD9279C970D00CFE92D /* NavigationController.swift */; };
 		1DE85A54279C50390049192F /* ApiUrlFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DE85A53279C50390049192F /* ApiUrlFactory.swift */; };
 		1DE85A59279C53FF0049192F /* AlamofireAdapterFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DE85A58279C53FF0049192F /* AlamofireAdapterFactory.swift */; };
 		1DE85A5D279C55CE0049192F /* EmailValidatorAdapterFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DE85A5C279C55CE0049192F /* EmailValidatorAdapterFactory.swift */; };
+		1DE85A60279C87280049192F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1DE85A5F279C87280049192F /* Images.xcassets */; };
 		1DFE9D4B26FA9C66006C23FC /* AccountModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DB76C172648E414005006C1 /* AccountModelFactory.swift */; };
 /* End PBXBuildFile section */
 
@@ -423,9 +428,14 @@
 		1DBD1800264654EE000B8FD2 /* DomainError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DomainError.swift; sourceTree = "<group>"; };
 		1DBD180326465884000B8FD2 /* HttpError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpError.swift; sourceTree = "<group>"; };
 		1DD4BB0126747609009A3903 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		1DE78AD2279C8CF200CFE92D /* UIColorExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtensions.swift; sourceTree = "<group>"; };
+		1DE78AD4279C908300CFE92D /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		1DE78AD7279C95A700CFE92D /* RoundedTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedTextField.swift; sourceTree = "<group>"; };
+		1DE78AD9279C970D00CFE92D /* NavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
 		1DE85A53279C50390049192F /* ApiUrlFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiUrlFactory.swift; sourceTree = "<group>"; };
 		1DE85A58279C53FF0049192F /* AlamofireAdapterFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlamofireAdapterFactory.swift; sourceTree = "<group>"; };
 		1DE85A5C279C55CE0049192F /* EmailValidatorAdapterFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailValidatorAdapterFactory.swift; sourceTree = "<group>"; };
+		1DE85A5F279C87280049192F /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -594,7 +604,9 @@
 			isa = PBXGroup;
 			children = (
 				1D1E22F926752533003B86B2 /* UIViewControllerExtensdions.swift */,
+				1DE78AD2279C8CF200CFE92D /* UIColorExtensions.swift */,
 				1D1E22FB2675267B003B86B2 /* Storyboarded.swift */,
+				1DE78AD4279C908300CFE92D /* Color.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -724,6 +736,8 @@
 		1D512372267469F900795EB3 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				1DE78AD6279C958A00CFE92D /* Components */,
+				1DE85A5E279C87030049192F /* resources */,
 				1D1E22F82675250B003B86B2 /* Helpers */,
 				1D1E22F326751965003B86B2 /* Scenes */,
 				1D512374267469F900795EB3 /* Info.plist */,
@@ -1099,6 +1113,15 @@
 			path = Errors;
 			sourceTree = "<group>";
 		};
+		1DE78AD6279C958A00CFE92D /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				1DE78AD7279C95A700CFE92D /* RoundedTextField.swift */,
+				1DE78AD9279C970D00CFE92D /* NavigationController.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
 		1DE85A55279C509C0049192F /* Http */ = {
 			isa = PBXGroup;
 			children = (
@@ -1123,6 +1146,14 @@
 				1D1E2373267550E5003B86B2 /* SignUpControllerFactory.swift */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		1DE85A5E279C87030049192F /* resources */ = {
+			isa = PBXGroup;
+			children = (
+				1DE85A5F279C87280049192F /* Images.xcassets */,
+			);
+			path = resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1577,6 +1608,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1D1E22F026747897003B86B2 /* SignUp.storyboard in Resources */,
+				1DE85A60279C87280049192F /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1707,8 +1739,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				1DD4BB0226747609009A3903 /* SignUpViewController.swift in Sources */,
+				1DE78AD8279C95A700CFE92D /* RoundedTextField.swift in Sources */,
 				1D1E22FA26752533003B86B2 /* UIViewControllerExtensdions.swift in Sources */,
 				1D1E22FC2675267B003B86B2 /* Storyboarded.swift in Sources */,
+				1DE78AD5279C908300CFE92D /* Color.swift in Sources */,
+				1DE78ADA279C970D00CFE92D /* NavigationController.swift in Sources */,
+				1DE78AD3279C8CF200CFE92D /* UIColorExtensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

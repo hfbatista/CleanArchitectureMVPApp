@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import UI
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
@@ -13,10 +14,14 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
 	func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
 		guard let windowScene = (scene as? UIWindowScene) else { return }
+		window = UIWindow(windowScene: windowScene)
+		
 		let httpCLient = makeAlamofireAdapter()
 		let createAccount = makeRemoteCreateAccount(httpCLient: httpCLient)
-		window = UIWindow(windowScene: windowScene)
-		window?.rootViewController = makeSignupViewController(createAccount: createAccount)
+		let signupController = makeSignupViewController(createAccount: createAccount)
+		let nav = NavigationController(rootViewController: signupController)
+
+		window?.rootViewController = nav
 		window?.makeKeyAndVisible()
 	}
 }
