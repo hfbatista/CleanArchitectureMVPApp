@@ -18,7 +18,7 @@ class SignUpFactoriesTests: XCTestCase {
 		let exp = expectation(description: "waiting")
 		
 		DispatchQueue.global().async {
-			createAccountSpy.completeWithError(.unexpected)
+			createAccountSpy.completeWithError(.unexpected)
 			exp.fulfill()
 		}
 		wait(for: [exp], timeout: 2)
