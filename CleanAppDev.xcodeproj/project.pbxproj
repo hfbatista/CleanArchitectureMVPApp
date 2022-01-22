@@ -108,6 +108,7 @@
 		1DE78AD5279C908300CFE92D /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DE78AD4279C908300CFE92D /* Color.swift */; };
 		1DE78AD8279C95A700CFE92D /* RoundedTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DE78AD7279C95A700CFE92D /* RoundedTextField.swift */; };
 		1DE78ADA279C970D00CFE92D /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DE78AD9279C970D00CFE92D /* NavigationController.swift */; };
+		1DE78ADC279CA55800CFE92D /* Authentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DE78ADB279CA55800CFE92D /* Authentication.swift */; };
 		1DE85A54279C50390049192F /* ApiUrlFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DE85A53279C50390049192F /* ApiUrlFactory.swift */; };
 		1DE85A59279C53FF0049192F /* AlamofireAdapterFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DE85A58279C53FF0049192F /* AlamofireAdapterFactory.swift */; };
 		1DE85A5D279C55CE0049192F /* EmailValidatorAdapterFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DE85A5C279C55CE0049192F /* EmailValidatorAdapterFactory.swift */; };
@@ -432,6 +433,7 @@
 		1DE78AD4279C908300CFE92D /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		1DE78AD7279C95A700CFE92D /* RoundedTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedTextField.swift; sourceTree = "<group>"; };
 		1DE78AD9279C970D00CFE92D /* NavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
+		1DE78ADB279CA55800CFE92D /* Authentication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Authentication.swift; sourceTree = "<group>"; };
 		1DE85A53279C50390049192F /* ApiUrlFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiUrlFactory.swift; sourceTree = "<group>"; };
 		1DE85A58279C53FF0049192F /* AlamofireAdapterFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlamofireAdapterFactory.swift; sourceTree = "<group>"; };
 		1DE85A5C279C55CE0049192F /* EmailValidatorAdapterFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailValidatorAdapterFactory.swift; sourceTree = "<group>"; };
@@ -1075,6 +1077,7 @@
 		1DBD17FC26464E47000B8FD2 /* UseCases */ = {
 			isa = PBXGroup;
 			children = (
+				1DE78ADB279CA55800CFE92D /* Authentication.swift */,
 				1DBD17CD26462C34000B8FD2 /* CreateAccount.swift */,
 			);
 			path = UseCases;
@@ -1820,6 +1823,7 @@
 				1DBD17F42646498B000B8FD2 /* BaseModel .swift in Sources */,
 				1DBD17CE26462C34000B8FD2 /* CreateAccount.swift in Sources */,
 				1DBD1801264654EE000B8FD2 /* DomainError.swift in Sources */,
+				1DE78ADC279CA55800CFE92D /* Authentication.swift in Sources */,
 				1DBD17D026462E0E000B8FD2 /* AccountModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
