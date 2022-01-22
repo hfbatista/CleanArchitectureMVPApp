@@ -10,7 +10,7 @@ import UI
 import Main
 import Validation
 
-class SignUpComposerTests: XCTestCase {
+class SignUpFactoriesTests: XCTestCase {
 	func test_background_request_should_complete_on_main_thread() throws {
 		let (sut, createAccountSpy) = makeSUT()
 		sut.loadViewIfNeeded()
@@ -18,14 +18,14 @@ class SignUpComposerTests: XCTestCase {
 		let exp = expectation(description: "waiting")
 		
 		DispatchQueue.global().async {
-			createAccountSpy.completeWithError(.unexpected)
+			createAccountSpy.completeWithError(.unexpected)
 			exp.fulfill()
 		}
 		wait(for: [exp], timeout: 2)
 	}
 	
 	func test_signUp_compose_with_correct_validations() {
-		let validations = SignUpComposer.makeValidations()
+		let validations = makeSignupValidations()
 		XCTAssertEqual(validations[0] as! RequiredFieldValidation, RequiredFieldValidation(fieldName: "name", fieldLabel: "Nome"))
 		XCTAssertEqual(validations[1] as! RequiredFieldValidation, RequiredFieldValidation(fieldName: "email", fieldLabel: "Email"))
 		XCTAssertEqual(validations[2] as! EmailValidation, EmailValidation(fieldName: "email", fieldLabel: "Email", emailValidatorSpy: EmailValidatorSpy()))
@@ -36,10 +36,10 @@ class SignUpComposerTests: XCTestCase {
 	}
 }
 
-extension SignUpComposerTests {
+extension SignUpFactoriesTests {
 	func makeSUT(file: StaticString = #filePath, line: UInt = #line) -> (sut: SignUpViewController, createAccountSpy: CreateAccountSpy) {
 		let createAccountSpy = CreateAccountSpy()
-		let sut = SignUpComposer.composeViewControllerWith(createAccount: MainDispatchQueueDecorator(createAccountSpy))
+		let sut = makeSignupViewController(createAccount: MainDispatchQueueDecorator(createAccountSpy))
 		checkMemoryLeak(for: createAccountSpy, file: file, line: line)
 		checkMemoryLeak(for: sut, file: file, line: line)
 		

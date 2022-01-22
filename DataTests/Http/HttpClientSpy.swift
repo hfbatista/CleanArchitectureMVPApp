@@ -8,7 +8,7 @@
 import Foundation
 import Data
 
-class HttpClientSpy: HttpPostClient {
+class HttpClientSpy: HttpPostClientProtocol {
 	var urls = [URL]()
 	var data: Data?
 	var completion: ((Result<Data?, HttpError>) -> Void)?

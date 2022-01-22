@@ -9,7 +9,7 @@ import Foundation
 import Alamofire
 import Data
 
-public final class AlamofireAdapter: HttpPostClient {
+public final class AlamofireAdapter: HttpPostClientProtocol {
 	private let session: Session
 	
 	public init(for session: Session = .default) {

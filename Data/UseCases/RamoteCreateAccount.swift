@@ -10,9 +10,9 @@ import Domain
 
 public final class RamoteCreateAccount: CreateAccount {
 	private let url: URL
-	private let httpClient: HttpPostClient
+	private let httpClient: HttpPostClientProtocol
 	
-	public init(url: URL, httpClient: HttpPostClient) {
+	public init(url: URL, httpClient: HttpPostClientProtocol) {
 		self.url = url
 		self.httpClient = httpClient
 	}
