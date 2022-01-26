@@ -109,6 +109,9 @@
 		1DE78AD8279C95A700CFE92D /* RoundedTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DE78AD7279C95A700CFE92D /* RoundedTextField.swift */; };
 		1DE78ADA279C970D00CFE92D /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DE78AD9279C970D00CFE92D /* NavigationController.swift */; };
 		1DE78ADC279CA55800CFE92D /* Authentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DE78ADB279CA55800CFE92D /* Authentication.swift */; };
+		1DE78ADE279CA67800CFE92D /* RemoteAuthenticationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DE78ADD279CA67800CFE92D /* RemoteAuthenticationTests.swift */; };
+		1DE78AE0279CA77400CFE92D /* AuthenticationModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DE78ADF279CA77400CFE92D /* AuthenticationModelFactory.swift */; };
+		1DE78AE2279CA84800CFE92D /* RemoteAuthentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DE78AE1279CA84800CFE92D /* RemoteAuthentication.swift */; };
 		1DE85A54279C50390049192F /* ApiUrlFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DE85A53279C50390049192F /* ApiUrlFactory.swift */; };
 		1DE85A59279C53FF0049192F /* AlamofireAdapterFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DE85A58279C53FF0049192F /* AlamofireAdapterFactory.swift */; };
 		1DE85A5D279C55CE0049192F /* EmailValidatorAdapterFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DE85A5C279C55CE0049192F /* EmailValidatorAdapterFactory.swift */; };
@@ -434,6 +437,9 @@
 		1DE78AD7279C95A700CFE92D /* RoundedTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedTextField.swift; sourceTree = "<group>"; };
 		1DE78AD9279C970D00CFE92D /* NavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
 		1DE78ADB279CA55800CFE92D /* Authentication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Authentication.swift; sourceTree = "<group>"; };
+		1DE78ADD279CA67800CFE92D /* RemoteAuthenticationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteAuthenticationTests.swift; sourceTree = "<group>"; };
+		1DE78ADF279CA77400CFE92D /* AuthenticationModelFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationModelFactory.swift; sourceTree = "<group>"; };
+		1DE78AE1279CA84800CFE92D /* RemoteAuthentication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteAuthentication.swift; sourceTree = "<group>"; };
 		1DE85A53279C50390049192F /* ApiUrlFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiUrlFactory.swift; sourceTree = "<group>"; };
 		1DE85A58279C53FF0049192F /* AlamofireAdapterFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlamofireAdapterFactory.swift; sourceTree = "<group>"; };
 		1DE85A5C279C55CE0049192F /* EmailValidatorAdapterFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailValidatorAdapterFactory.swift; sourceTree = "<group>"; };
@@ -942,6 +948,7 @@
 				1DB76C102648E0FB005006C1 /* TestExtensions.swift */,
 				1DB76C122648E1C1005006C1 /* TestFactories.swift */,
 				1DB76C172648E414005006C1 /* AccountModelFactory.swift */,
+				1DE78ADF279CA77400CFE92D /* AuthenticationModelFactory.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -1070,6 +1077,7 @@
 			isa = PBXGroup;
 			children = (
 				1DBD17E326462E65000B8FD2 /* RemoteCreateAccountTests.swift */,
+				1DE78ADD279CA67800CFE92D /* RemoteAuthenticationTests.swift */,
 			);
 			path = UseCases;
 			sourceTree = "<group>";
@@ -1087,6 +1095,7 @@
 			isa = PBXGroup;
 			children = (
 				1DBD17F526464B6C000B8FD2 /* RamoteCreateAccount.swift */,
+				1DE78AE1279CA84800CFE92D /* RemoteAuthentication.swift */,
 			);
 			path = UseCases;
 			sourceTree = "<group>";
@@ -1835,6 +1844,7 @@
 				1DBD17F826464BBD000B8FD2 /* HttpPostClientProtocol.swift in Sources */,
 				1DB76C0E2646E027005006C1 /* ExtensionHelpers.swift in Sources */,
 				1DBD180426465884000B8FD2 /* HttpError.swift in Sources */,
+				1DE78AE2279CA84800CFE92D /* RemoteAuthentication.swift in Sources */,
 				1DBD17F626464B6C000B8FD2 /* RamoteCreateAccount.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1848,6 +1858,8 @@
 				1DBD17E426462E65000B8FD2 /* RemoteCreateAccountTests.swift in Sources */,
 				1DFE9D4B26FA9C66006C23FC /* AccountModelFactory.swift in Sources */,
 				1DB76C112648E0FB005006C1 /* TestExtensions.swift in Sources */,
+				1DE78ADE279CA67800CFE92D /* RemoteAuthenticationTests.swift in Sources */,
+				1DE78AE0279CA77400CFE92D /* AuthenticationModelFactory.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

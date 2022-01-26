@@ -9,7 +9,7 @@ import Foundation
 
 public protocol AuthenticationProtocol {
 	typealias Result = Swift.Result<AccountModel, DomainError>
-	func create(_ createAccountModel: AuthenticationModel, completion: @escaping (Result) ->  Void)
+	func auth(_ createAccountModel: AuthenticationModel, completion: @escaping (Result) ->  Void)
 }
 
 public struct AuthenticationModel: BaseModel {
