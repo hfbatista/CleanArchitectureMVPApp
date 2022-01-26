@@ -18,6 +18,6 @@ public final class RemoteAuthentication {
 	}
 	
 	public func auth(_ authenticationModel: AuthenticationModel, completion: @escaping (AuthenticationProtocol.Result) -> Void) {
-		self.httpClient.post(to: self.url, with: nil) { _ in }
+		self.httpClient.post(to: self.url, with: authenticationModel.toData()) { _ in }
 	}
 }
